@@ -112,8 +112,36 @@ export class PieChartComponent implements OnInit {
         const path = svg.selectAll('path')
           .data(pie(data[val]));
 
+        const tooltip = d3.select('#chart-area')                               // NEW
+          .append('div')                                                // NEW
+          .attr('class', 'tooltip');                                    // NEW
+
+        tooltip.append('div')                                           // NEW
+          .attr('class', 'label');                                      // NEW
+
+        tooltip.append('div')                                           // NEW
+          .attr('class', 'count');                                      // NEW
+
+        tooltip.append('div')                                           // NEW
+          .attr('class', 'percent');
+
         // Update existing arcs
         path.transition().duration(200).attrTween('d', arcTween);
+
+        path.on('mouseover', function (d) {                            // NEW
+          const total = d3.sum(data[val].map(function (d) {                // NEW
+            return d.val;                                           // NEW
+          }));                                                        // NEW
+          const percent = Math.round(1000 * d.data.count / total) / 10; // NEW
+          tooltip.select('.region').html(d.data.region);                // NEW
+          tooltip.select('.count').html(d.data.count);                // NEW
+          tooltip.select('.percent').html(percent + '%');             // NEW
+          tooltip.style('display', 'block');                          // NEW
+        });                                                           // NEW
+
+        path.on('mouseout', function () {                              // NEW
+          tooltip.style('display', 'none');                           // NEW
+        });
 
         // Enter new arcs
         path.enter().append('path')
