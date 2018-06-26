@@ -1,6 +1,7 @@
 #chart-area svg {
   margin:auto;
   display:inherit;
+  align-content: center;
 }
 text {
   font: 10px sans-serif;
