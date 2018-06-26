@@ -76,16 +76,16 @@ export class BubbleChartComponent implements OnInit {
     }, function (error, classes) {
       if (error) { throw error; }
 
-      const root = d3.hierarchy({ children: classes })
-        .sum(function (d) { return d.value; })
-        .each(function (d) {
-          if (id = d.data.id) {
-            let id, i = id.lastIndexOf('.');
-            d.id = id;
-            d.package = id.slice(0, i);
-            d.class = id.slice(i + 1);
-          }
-        });
+      // const root = d3.hierarchy({ children: classes })
+      //   .sum(function (d) { return d.value; })
+      //   .each(function (d) {
+      //     if (id = d.data.id) {
+      //       let id, i = id.lastIndexOf('.');
+      //       d.id = id;
+      //       d.package = id.slice(0, i);
+      //       d.class = id.slice(i + 1);
+      //     }
+      //   });
 
       const node = svg.selectAll('.node')
         .data(pack(root).leaves())
