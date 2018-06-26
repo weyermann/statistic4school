@@ -51,13 +51,13 @@ export class BarChartComponent implements OnInit {
 
     this.dataLoaded = false;
 
-    this._data.getPopulationZurichPerYear().subscribe((data: DataPoint[]) => {
+    this._data.getPopulationZurich2017PerQuarter().subscribe((data: DataPoint[]) => {
       const svg = d3.select('svg'),
       margin = { top: 40, right: 50, bottom: 40, left: 50 },
       width = +svg.attr('width') - margin.left - margin.right,
       height = +svg.attr('height') - margin.top - margin.bottom;
 
-    const x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
+    const x = d3.scaleBand().rangeRound([0, width]).padding(0.4),
       y = d3.scaleLinear().rangeRound([height, 0]);
 
     const g = svg.append('g')
@@ -65,11 +65,11 @@ export class BarChartComponent implements OnInit {
 
     x.domain(data.map(function (d) { return d.cat; }));
 
-    let minVal = d3.min(data, function (d) { return d.val; });
+    const minVal = d3.min(data, function (d) { return d.val; });
     const maxVal = d3.max(data, function (d) { return d.val; });
 
-    // apply extra margin for lower value
-    minVal = minVal - 0.3 * (maxVal - minVal);
+    // apply extra margin of 30% for lower value
+    // minVal = minVal - 0.3 * (maxVal - minVal);
 
     y.domain([minVal, maxVal]);
 

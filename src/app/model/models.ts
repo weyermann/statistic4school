@@ -21,7 +21,7 @@ export enum EDiagramTypes {
 }
 
 export class Questions {
-  static q1 = 'Wie hat sich die Bevölkerungszahl von Zürich seit dem Jahr 1800 entwickelt?';
+  static q1 = 'In welchem Zürcher Quartier lebten 2017 die meisten Menschen?';
   static q2 = 'Wie lautet die Frage 2?';
   static q3 = 'Wie lautet die Frage 3?';
   static q4 = 'Wie lautet die Frage 4?';
