@@ -11,24 +11,35 @@ import { Subject } from 'rxjs';
 export class DiagramTypeSelectionComponent implements OnInit, OnChanges {
 
   public diagramTypeChanged: Subject<string> = new Subject<string>();
+  public datasetChanged: Subject<string> = new Subject<string>();
 
   public diagramTypes;
+  public datasets;
   public selectedDiagramType;
+  public selectedDataset;
 
   constructor(
     private _diagram: DiagramService,
-  private _monitor: StatusMonitorService) {
+    private _monitor: StatusMonitorService
+  ) {
     this.diagramTypes = [
-      {value: 'bar', viewValue: 'Balkendiagramm'},
-      {value: 'pie', viewValue: 'Tortendiagramm'},
-      {value: 'bubble', viewValue: 'Bubble Diagramm'},
-      {value: 'map', viewValue: 'Karte'},
-      {value: 'spider', viewValue: 'Netzdiagramm'},
+      { value: 'bar', viewValue: 'Balkendiagramm' },
+      { value: 'pie', viewValue: 'Tortendiagramm' },
+      { value: 'bubble', viewValue: 'Bubble Diagramm' },
+      { value: 'map', viewValue: 'Karte' },
+      { value: 'spider', viewValue: 'Netzdiagramm' },
     ];
-   }
+
+    this.datasets = [
+      { value: 'zh_pop_2017_per_quarter', viewValue: 'Bevölkerung Zürich 2017 pro Wohnquartier' },
+      { value: 'zh_pop_1970_2017_per_quarter', viewValue: 'Bevölkerung Zürich 1970 bis 2017 pro Wohnquartier' },
+      { value: 'zh_pop_by_origin', viewValue: 'Bevölkerung Zürich nach Geburtsort und Geburtsland' }
+    ];
+  }
 
   ngOnInit() {
     this.selectedDiagramType = '';
+    this.selectedDataset = '';
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -36,12 +47,18 @@ export class DiagramTypeSelectionComponent implements OnInit, OnChanges {
     if (changes['selectedDiagramType']) {
       this._monitor.setStatusIsAxisDataSelection();
       this._diagram.changeDiagramSelection(this.selectedDiagramType);
+      this._diagram.changeDatasetSelection(this.selectedDataset);
     }
   }
 
   changeDiagramType() {
     this._monitor.setStatusIsAxisDataSelection();
     this._diagram.changeDiagramSelection(this.selectedDiagramType);
+  }
+
+  changeDataset() {
+    this._monitor.setStatusIsAxisDataSelection();
+    this._diagram.changeDatasetSelection(this.selectedDataset);
   }
 
 }

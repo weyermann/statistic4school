@@ -10,12 +10,18 @@ export class DiagramService {
 
   // Observable string sources
   private diagramSelectionChangedSource = new Subject<string>();
+  private datasetSelectionChangedSource = new Subject<string>();
 
   // Observable string streams
   diagramSelectionChanged$ = this.diagramSelectionChangedSource.asObservable();
+  datasetSelectionChanged$ = this.datasetSelectionChangedSource.asObservable();
 
   // Service message commands
   changeDiagramSelection(type: string) {
     this.diagramSelectionChangedSource.next(type);
+  }
+
+  changeDatasetSelection(type: string) {
+    this.datasetSelectionChangedSource.next(type);
   }
 }

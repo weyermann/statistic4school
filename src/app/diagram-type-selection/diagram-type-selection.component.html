@@ -1,6 +1,38 @@
 <div>
   <mat-card class="main-card">
-    <div>
+    <mat-grid-list cols="2" rowHeight="200px">
+      <mat-grid-tile>
+        <mat-card class="sub-card">
+          <div>
+            <h2 class="mat-h2 card-text">Bitte wähle einen Datensatz aus, um die Fragen zu beantworten:</h2>
+            <mat-form-field  style="min-width: 400px">
+
+              <mat-select [(value)]="selectedDataset" placeholder="Datensatz" (selectionChange)="changeDataset()">
+                <mat-option *ngFor="let type of datasets" [value]="type.value">
+                  {{ type.viewValue }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile >
+        <mat-card *ngIf=" selectedDataset !== ''" class="sub-card">
+          <div>
+            <h2 class="mat-h2 card-text">Bitte wähle einen Diagramm aus, um die Fragen zu beantworten:</h2>
+            <mat-form-field>
+
+              <mat-select [(value)]="selectedDiagramType" placeholder="Diagrammtyp" (selectionChange)="changeDiagramType()">
+                <mat-option *ngFor="let type of diagramTypes" [value]="type.value">
+                  {{ type.viewValue }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <!-- <div>
       <h2 class="mat-h2 card-text">Bitte wähle einen Diagrammtyp aus, um die Fragen zu beantworten: {{selectedDiagramType}}</h2>
       <mat-form-field>
 
@@ -10,6 +42,34 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-    </div>
+    </div> -->
+    <!-- <div>
+      <mat-card class="sub-card">
+        <div>
+          <h2 class="mat-h2 card-text">Bitte wähle einen Diagrammtyp aus, um die Fragen zu beantworten: {{selectedDiagramType}}</h2>
+          <mat-form-field>
+
+            <mat-select [(value)]="selectedDiagramType" placeholder="Diagrammtyp" (selectionChange)="changeDiagramType()">
+              <mat-option *ngFor="let type of diagramTypes" [value]="type.value">
+                {{ type.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </mat-card>
+      <mat-card class="sub-card">
+        <div>
+          <h2 class="mat-h2 card-text">Bitte wähle einen Diagrammtyp aus, um die Fragen zu beantworten: {{selectedDiagramType}}</h2>
+          <mat-form-field>
+
+            <mat-select [(value)]="selectedDiagramType" placeholder="Diagrammtyp" (selectionChange)="changeDiagramType()">
+              <mat-option *ngFor="let type of diagramTypes" [value]="type.value">
+                {{ type.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </mat-card>
+    </div> -->
   </mat-card>
 </div>
