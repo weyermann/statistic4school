@@ -1,0 +1,18 @@
+<app-question-intro [topicTitle]="topicTitle" [topicQuestion]="topicQuestion"></app-question-intro>
+<!-- <app-data-viz [topicID]="topicID" ></app-data-viz> -->
+
+<!-- Diagram Selection Page (Status = 1) -->
+<app-diagram-type-selection></app-diagram-type-selection>
+
+<!-- Selected Diagram Page (Status = 2) -->
+<!-- <app-data-viz *ngIf="diagramType > 0"></app-data-viz> -->
+
+<app-bar-chart *ngIf="diagramType == 1"></app-bar-chart>
+<app-pie-chart *ngIf="diagramType == 2"></app-pie-chart>
+<app-bubble-chart *ngIf="diagramType == 3"></app-bubble-chart>
+<app-map-chart *ngIf="diagramType == 4"></app-map-chart>
+<app-spider-chart *ngIf="diagramType == 5"></app-spider-chart>
+
+<!-- Answer Submitte Page (Status = 4) -->
+
+

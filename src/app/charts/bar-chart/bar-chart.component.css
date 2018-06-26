@@ -1,0 +1,25 @@
+.chart rect {
+  fill: steelblue;
+}
+
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+.bar-chart {
+  background-color: #C7D9D9;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis--x path {
+  display: none;
+}

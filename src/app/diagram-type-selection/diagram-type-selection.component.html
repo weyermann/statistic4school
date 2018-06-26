@@ -1,0 +1,15 @@
+<div>
+  <mat-card class="main-card">
+    <div>
+      <h2 class="mat-h2 card-text">Bitte wähle einen Diagrammtyp aus, um die Fragen zu beantworten: {{selectedDiagramType}}</h2>
+      <mat-form-field>
+
+        <mat-select [(value)]="selectedDiagramType" placeholder="Diagrammtyp" (selectionChange)="changeDiagramType()">
+          <mat-option *ngFor="let type of diagramTypes" [value]="type.value">
+            {{ type.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-card>
+</div>
