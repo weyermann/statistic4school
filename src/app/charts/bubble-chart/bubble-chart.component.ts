@@ -87,11 +87,11 @@ export class BubbleChartComponent implements OnInit {
       //     }
       //   });
 
-      const node = svg.selectAll('.node')
-        .data(pack(root).leaves())
-        .enter().append('g')
-        .attr('class', 'node')
-        .attr('transform', function (d) { return 'translate(' + d.x + ',' + d.y + ')'; });
+      // const node = svg.selectAll('.node')
+      //   .data(pack(root).leaves())
+      //   .enter().append('g')
+      //   .attr('class', 'node')
+      //   .attr('transform', function (d) { return 'translate(' + d.x + ',' + d.y + ')'; });
 
       node.append('circle')
         .attr('id', function (d) { return d.id; })

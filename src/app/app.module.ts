@@ -19,6 +19,7 @@ import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
 import { BubbleChartComponent } from './charts/bubble-chart/bubble-chart.component';
 import { MapChartComponent } from './charts/map-chart/map-chart.component';
 import { SpiderChartComponent } from './charts/spider-chart/spider-chart.component';
+import { AnswerSubmissionComponent } from './answer-submission/answer-submission.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { SpiderChartComponent } from './charts/spider-chart/spider-chart.compone
     BubbleChartComponent,
     MapChartComponent,
     SpiderChartComponent,
+    AnswerSubmissionComponent,
   ],
   imports: [
     AppRoutingModule,
