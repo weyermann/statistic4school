@@ -3,20 +3,21 @@
   <!-- <h1 class="mat-display-1 card-text">Bitte gib deine Antwort hier ein</h1> -->
   <mat-card class="sub-card">
     <div>
-      <h2 class="mat-h2 card-text">Bitte gebe hier deine Antwort ein</h2>
-      <!-- <mat-form-field  style="min-width: 400px">
-
-        <mat-select [(value)]="selectedDataset" placeholder="Datensatz" (selectionChange)="changeDataset()">
-          <mat-option *ngFor="let type of datasets" [value]="type.value">
-            {{ type.viewValue }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field> -->
-
-      <!-- <mat-form-field  style="min-width: 400px">
-       
-      </mat-form-field> -->
+      <h2 class="mat-h2 card-text">Bitte gebe hier deine Antwort ein:</h2>
+      <div>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Deine Antwort" value="">
+        </mat-form-field>
       
+        <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="Kommentar zur Frage (optional)"></textarea>
+        </mat-form-field>
+
+        <!-- <button style="margin-left: 20px" mat-raised-button color="primary">Antwort abschicken</button> -->
+      </div>
+      <div>
+        <button (click)="showAnswerFeedback()" style="margin-left: 20px" mat-raised-button color="primary">Antwort abschicken</button>
+      </div>
     </div>
   </mat-card>
 </mat-card>

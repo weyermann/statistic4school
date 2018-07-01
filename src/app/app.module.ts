@@ -4,7 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule,
-  MatListModule, MatGridListModule, MatCardModule, MatMenuModule, MatSelectModule, MatFormFieldModule } from '@angular/material';
+  // tslint:disable-next-line:max-line-length
+  MatListModule, MatGridListModule, MatCardModule, MatMenuModule, MatSelectModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyNavComponent } from './my-nav/my-nav.component';
 import { MyDashboardComponent } from './my-dashboard/my-dashboard.component';
@@ -20,6 +22,7 @@ import { BubbleChartComponent } from './charts/bubble-chart/bubble-chart.compone
 import { MapChartComponent } from './charts/map-chart/map-chart.component';
 import { SpiderChartComponent } from './charts/spider-chart/spider-chart.component';
 import { AnswerSubmissionComponent } from './answer-submission/answer-submission.component';
+import { AnswerFeedbackComponent } from './answer-feedback/answer-feedback.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,10 @@ import { AnswerSubmissionComponent } from './answer-submission/answer-submission
     MapChartComponent,
     SpiderChartComponent,
     AnswerSubmissionComponent,
+    AnswerFeedbackComponent,
+  ],
+  entryComponents: [
+    AnswerFeedbackComponent
   ],
   imports: [
     AppRoutingModule,
@@ -51,7 +58,9 @@ import { AnswerSubmissionComponent } from './answer-submission/answer-submission
     MatCardModule,
     MatMenuModule,
     MatSelectModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
