@@ -1,0 +1,27 @@
+<div>
+  <mat-card class="main-card">
+  <!-- <h1 class="mat-display-1 card-text">Bitte gib deine Antwort hier ein</h1> -->
+  <mat-card class="sub-card">
+    <div>
+      <h2 class="mat-h2 card-text">Bitte gebe hier deine Antwort ein:</h2>
+      <div>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Deine Antwort" value="">
+        </mat-form-field>
+      
+        <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="Zusatzfrage: Kannst du sagen wie viele Menschen ungefähr dort wohnten?"></textarea>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="Inwiefern war das Diagramm gut geeignet zur Beantwortung der Frage?"></textarea>
+        </mat-form-field>
+
+        <!-- <button style="margin-left: 20px" mat-raised-button color="primary">Antwort abschicken</button> -->
+      </div>
+      <div>
+        <button (click)="showAnswerFeedback()" style="margin-left: 20px" mat-raised-button color="primary">Antwort abschicken</button>
+      </div>
+    </div>
+  </mat-card>
+</mat-card>
+</div>

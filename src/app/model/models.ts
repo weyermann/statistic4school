@@ -6,10 +6,10 @@ export enum ESteps {
 }
 
 export enum EQuestionCategories {
-  Geografie = 1,
+  Zürich = 1,
   Natur = 2,
   Sport = 3,
-  Biologie = 4
+  Aktuell = 4
 }
 
 export enum EDiagramTypes {

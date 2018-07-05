@@ -8,7 +8,7 @@
     [opened]="(isHandset$ | async)">
     <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/dashboard" (click)="sidenav.toggle()">Dashboard</a>
+      <a mat-list-item routerLink="/dashboard" (click)="sidenav.toggle()">Themenwahl</a>
       <a mat-list-item routerLink="/topic-1" (click)="sidenav.toggle()">{{topic1}}</a>
       <a mat-list-item routerLink="/topic-2" (click)="sidenav.toggle()">{{topic2}}</a>
       <a mat-list-item routerLink="/topic-3" (click)="sidenav.toggle()">{{topic3}}</a>
@@ -21,7 +21,8 @@
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="sidenav.toggle()">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Statistik 4 School</span>
+      <span class="example-spacer">Statistik 4 School</span>
+      <h1>Dein aktueller Score: {{ score }} Punkte</h1>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

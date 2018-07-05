@@ -1,3 +1,4 @@
+import { DiagramService } from './../diagram.service';
 import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
@@ -19,15 +20,27 @@ export class MyNavComponent {
   public topic3;
   public topic4;
 
+  public score: number;
+
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches)
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private _diagram: DiagramService
+  ) {
+
+    this._diagram.anwerSubmittedChanged$.subscribe((value) => {
+      this.score = this.score + value;
+    });
+
     this.topic1 = EQuestionCategories[1];
     this.topic2 = EQuestionCategories[2];
     this.topic3 = EQuestionCategories[3];
     this.topic4 = EQuestionCategories[4];
+
+    this.score = 0;
   }
 }

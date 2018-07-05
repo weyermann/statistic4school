@@ -22,12 +22,17 @@ export class DiagramTypeSelectionComponent implements OnInit, OnChanges {
     private _diagram: DiagramService,
     private _monitor: StatusMonitorService
   ) {
+    // this.diagramTypes = [
+    //   { value: 'bar', viewValue: 'Balkendiagramm' },
+    //   { value: 'pie', viewValue: 'Tortendiagramm' },
+    //   { value: 'bubble', viewValue: 'Bubble Diagramm' },
+    //   { value: 'map', viewValue: 'Karte' },
+    //   { value: 'spider', viewValue: 'Netzdiagramm' },
+    // ];
+
     this.diagramTypes = [
       { value: 'bar', viewValue: 'Balkendiagramm' },
-      { value: 'pie', viewValue: 'Tortendiagramm' },
-      { value: 'bubble', viewValue: 'Bubble Diagramm' },
-      { value: 'map', viewValue: 'Karte' },
-      { value: 'spider', viewValue: 'Netzdiagramm' },
+      { value: 'pie', viewValue: 'Tortendiagramm' }
     ];
 
     this.datasets = [
