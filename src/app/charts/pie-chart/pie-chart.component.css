@@ -1,10 +1,11 @@
 #chart-area{
   align-content: center;
+  max-width: 600px;
 }
 
 #chart-area svg {
-  margin:auto;
-  display:inherit;
+  margin: auto;
+  display: inherit;
 }
 
 text {
@@ -30,4 +31,9 @@ form {
   top: 95px;                                                      /* NEW */
   width: 80px;                                                    /* NEW */
   z-index: 10;                                                    /* NEW */
-}            
+}
+
+.diagram-area {
+  max-width: 800px !important;
+  height: auto;
+}

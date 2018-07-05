@@ -5,18 +5,21 @@
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>
-            <a routerLink="/{{card.route}}">{{card.title}}</a>
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+            <a routerLink="/{{card.route}}">Thema: {{card.title}}</a>
+            <!-- <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
               <mat-icon>more_vert</mat-icon>
-            </button>
+            </button> -->
             <mat-menu #menu="matMenu" xPosition="before">
               <button mat-menu-item>Expand</button>
               <button mat-menu-item>Remove</button>
             </mat-menu>
           </mat-card-title>
         </mat-card-header>
+        <img *ngIf="card.route === 'topic-1'" mat-card-image src="assets/img/topic_zurich2.jpg" alt="Photo of a Shiba Inu">
         <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
+          <div class="title-img">
+            <!-- <img src="assets/img/topic_zurich2.jpg" /> -->
+          </div>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
