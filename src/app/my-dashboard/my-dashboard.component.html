@@ -15,7 +15,7 @@
             </mat-menu>
           </mat-card-title>
         </mat-card-header>
-        <img *ngIf="card.route === 'topic-1'" mat-card-image src="assets/img/topic_zurich2.jpg" alt="Photo of a Shiba Inu">
+        <img routerLink="/{{card.route}}" *ngIf="card.route === 'topic-1'" mat-card-image src="assets/img/topic_zurich2.jpg" alt="Prime tower" style="cursor: pointer;">
         <mat-card-content class="dashboard-card-content">
           <div class="title-img">
             <!-- <img src="assets/img/topic_zurich2.jpg" /> -->
