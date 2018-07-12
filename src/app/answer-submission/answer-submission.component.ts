@@ -22,7 +22,7 @@ private _diagram: DiagramService) { }
 
   showAnswerFeedback() {
     this._router.navigate(['dashboard']);
-    this._diagram.answerSubmitted(5);
+    this._diagram.answerSubmitted(20);
     const dialogRef = this.dialog.open(AnswerFeedbackComponent, {
       height: '400px',
       width: '600px',

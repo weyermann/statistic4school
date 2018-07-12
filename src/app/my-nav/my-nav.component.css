@@ -14,3 +14,17 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
+.notification-box {
+  position: fixed;
+  border: 0px solid grey;
+  border-radius: 10px;
+  width: 600px;
+  max-height: 400px;
+  overflow-y: scroll;
+  background-color: white;
+  box-shadow: 5px 10px 50px #888888 ;
+  z-index: 1000000;
+  top: 80px;
+  right: 30px;
+}

@@ -19,6 +19,8 @@ export class TopicBaseComponent implements OnInit {
   public topicTitle = '';
   public topicQuestion = '';
 
+  public chatBoxVisible = false;
+
   public diagramType: number;
 
 

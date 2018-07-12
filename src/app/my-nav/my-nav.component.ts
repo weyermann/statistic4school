@@ -22,6 +22,8 @@ export class MyNavComponent {
 
   public score: number;
 
+  public chatBoxVisible = false;
+
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches)
@@ -36,11 +38,20 @@ export class MyNavComponent {
       this.score = this.score + value;
     });
 
+    this._diagram.chatOpenedChanged$.subscribe((value) => {
+      this.chatBoxVisible = true;
+    });
+
+    this._diagram.chatSubmittedChanged$.subscribe((value) => {
+      this.chatBoxVisible = false;
+    });
+
     this.topic1 = EQuestionCategories[1];
     this.topic2 = EQuestionCategories[2];
     this.topic3 = EQuestionCategories[3];
     this.topic4 = EQuestionCategories[4];
 
     this.score = 0;
+    this.chatBoxVisible = false;
   }
 }

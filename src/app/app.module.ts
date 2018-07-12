@@ -23,6 +23,7 @@ import { MapChartComponent } from './charts/map-chart/map-chart.component';
 import { SpiderChartComponent } from './charts/spider-chart/spider-chart.component';
 import { AnswerSubmissionComponent } from './answer-submission/answer-submission.component';
 import { AnswerFeedbackComponent } from './answer-feedback/answer-feedback.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { AnswerFeedbackComponent } from './answer-feedback/answer-feedback.compo
     SpiderChartComponent,
     AnswerSubmissionComponent,
     AnswerFeedbackComponent,
+    ChatComponent,
   ],
   entryComponents: [
     AnswerFeedbackComponent

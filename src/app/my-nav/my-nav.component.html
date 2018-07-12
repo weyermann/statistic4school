@@ -1,11 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav
-    #sidenav
-    class="sidenav"
-    fixedInViewport="true"
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async)">
+  <mat-sidenav #sidenav class="sidenav" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async)">
     <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item routerLink="/dashboard" (click)="sidenav.toggle()">Themenwahl</a>
@@ -22,8 +17,17 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span class="example-spacer">Statistik 4 School</span>
+      <span class="example-spacer">
+        <mat-form-field style="width: 100px" appearance="outline">
+          <input style="max-height: 10px;" matInput placeholder="Hast du eine Frage?">
+        </mat-form-field>
+      </span>
       <h1>Dein aktueller Score: {{ score }} Punkte</h1>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+<div *ngIf="chatBoxVisible" class="notification-box">
+  <app-chat></app-chat>
+</div>
